@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  h1 Welcome to #{title}
+  form.user_input(action='/search', method='post')
+    label(for='search')
+      span Search
+      input(type='text', name='search', id='search')
+    label.control-label(for='submit')
+      span
+      input(type='submit', id='submit', value='Search')
+
+p
+  if userid
+    a(href="/dashboard") Your Dashboard
+    br
+    a(href="/orders") Orders
+    br
+    a(href="/warehouse") Warehouse
+    br
+    a(href="/logout") Logout
+    br
+  else
+    a(href="/login") Login
+    br
+
+  a(href="/users") User List
+  br
+  a(href="/users/add") Add user
+  br
+  a(href="/users/padd") Add product
+  br
+    

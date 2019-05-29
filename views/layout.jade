@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+  body
+    .layout-container
+      .row
+        .col-xs-4
+          img.logo(src='/images/icon.png')
+        .col-xs-4
+          .title Social Network
+      .row
+        .col-xs-4
+          .menu-box
+            a.menu(href="/") Home
+            a.menu(href="/users") List Users
+            a.menu(href="/orders") Orders
+            a.menu(href="/warehouse") Warehouse
+            a.menu(href="/orders/add") Add Product
+            a.menu(href="/users/add") Add User
+            if userid
+              a.menu(href="/dashboard") Dashboard
+              a.menu(href="/logout") Logout
+            else
+              a.menu(href="/login") Login
+
+    block content

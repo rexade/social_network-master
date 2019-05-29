@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    h1= title
+    table.order_table
+        tr
+            th Namn (Produkt)
+            th Pris (kr)
+            th Butik
+            th Ordered (amount)
+        
+        if order_list && order_list.length > 0
+            each order in order_list
+                tr
+                    td #{order.item}
+                        td #{order.price}
+                        td #{order.Butik}
+                        td #{order.ordered}
+           
+        else
+            tr
+                td(colspan=6) No records

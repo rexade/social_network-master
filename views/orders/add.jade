@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    h1 Add Product
+    form.user_input(action='/orders', method='post')
+        label(for='item')
+            span name
+            input(type='item', name='item', id='item', required='true')
+      
+
+        label(for='price')
+            span price
+            input(type='text', name='price', id='price', required='true')
+            br
+        
+        label(for='ordered')
+            span price
+            input(type='text', name='ordered', id='ordered', required='false')
+            br
+
+   
+        label.control-label(for='submit')
+            span
+            input(type='submit', id='submit', value='Save')

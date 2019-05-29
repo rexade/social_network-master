@@ -1,0 +1,8 @@
+extends layout
+
+block content
+
+  h1.error Sorry, the page you were looking for does not exist
+  h2.error= message
+  h2= error.status
+  pre #{error.stack}

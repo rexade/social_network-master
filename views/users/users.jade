@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+    h1= title
+    table.user_table
+        tr
+            th First Name
+            th Last Name
+            th Email
+            th Username
+            th Year of Birth
+            if userid
+                th Add as Friend
+            th Delete
+        if user_list && user_list.length > 0
+            each user in user_list
+                tr
+                    td #{user.first_name}
+                    td #{user.last_name}
+                    td #{user.email}
+                    td #{user.username}
+                    td #{user.birthyear}
+                    if userid
+                        td.center
+                            if userid === user.id
+                                b You
+                            else
+                                a(href="/users/add_friend?id=#{user.id}")
+                                    b Add
+                    td.center
+                        a(href="/users/delete?id=#{user.id}")
+                            img.icon(src="/images/delete.png")
+        else
+            tr
+                td(colspan=6) No records

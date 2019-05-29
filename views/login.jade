@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 Login
+    form.user_input(action="/login", method="post")
+        label(for="username")
+            span Username
+            input(type="text", name="username", id="username")
+        label(for="password")
+            span Password
+            input(type="password", name="password", id="password")
+        label.control-label(for="submit")
+            span
+            input(type="submit", id="submit", value="Login")
